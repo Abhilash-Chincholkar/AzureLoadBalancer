@@ -34,15 +34,6 @@ resource "azurerm_lb_probe" "lb_probe" {
   number_of_probes    = 2
 }
 
-data "azurerm_network_interface" "vm1_nic" {
-  name                = "lbnic1"
-  resource_group_name = var.resource_group_name
-}
-
-data "azurerm_network_interface" "vm2_nic" {
-  name                = "lbnic2"
-  resource_group_name = var.resource_group_name
-}
 
 # === Associate NICs with Backend Pool ===
 # For VM1
